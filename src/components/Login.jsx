@@ -12,7 +12,7 @@
     name: 'Kevan',
     password: 'q4KoTQQ',
     type: 'user',
-    email: 'Kevan18@aol.com'
+    email: 'Kevan18@aol.com'  
   },
   {
     name: 'Aarez',
@@ -196,6 +196,7 @@
     const [password,setpassword]=useState('')
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [LoggedUser, setLoggedUser] = useState(null);
+    
 
      const submitHandler =(e)=>{
       e.preventDefault();
