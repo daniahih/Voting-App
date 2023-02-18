@@ -12,7 +12,7 @@
     name: 'Kevan',
     password: 'q4KoTQQ',
     type: 'user',
-    email: 'Kevan18@aol.com'  
+    email: 'Kevan18@aol.com'
   },
   {
     name: 'Aarez',
@@ -196,14 +196,13 @@
     const [password,setpassword]=useState('')
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [LoggedUser, setLoggedUser] = useState(null);
-    
 
      const submitHandler =(e)=>{
       e.preventDefault();
       const user = users.find((user)=>user.email === email && user.password ===password)
       //return object 
       if(user){ // find the user from array 
-      setLoggedUser(user) // to control the user that entered and add to it the value (user)
+      setLoggedUser(user) // to control the user that entered and add to it the value (user) 
         setIsLoggedIn(true); // login true 
         
 
@@ -219,8 +218,9 @@
 
       return (
         <div>
-          
-          <p  style={{fontSize:"20px"}} >Welcome,<strong > {LoggedUser.name}</strong> keep your vote secret !</p>
+           
+          <p  style={{fontSize:"20px"}} >Welcome,<strong > {LoggedUser.name}</strong> keep your vote secret !</p> 
+        
           {/* Render the voting page here */}
           {
           // declaring a variable named loggedUser and inject to it a null value {} ==> empty obj

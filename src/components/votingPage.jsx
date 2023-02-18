@@ -1,6 +1,6 @@
 import './voitingPage.css'
 import { useState } from "react"
-import AdminPage from './AdminPage'
+// import AdminPage from './AdminPage'
  //becouse i want an array with 4 names and 4 imges and 4 counters i but all the info on object ,, and its easy for me to loop using map 
 const Votes = [
   {
@@ -32,7 +32,6 @@ const Votes = [
 const Voting = () => { // decaring a parent commponents 
   const [votes, setVotes] = useState(Votes)
   const [disabledButtonId, setDisabledButtonId] = useState(null)
-  const [voted, setVoted] = useState(false); // now i want to see if the user or admin is vote so this use case for that
   // this is for button after voted 
   const [Done, setDone] = useState(false);
   const [Change, setChange] = useState(false);
