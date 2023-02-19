@@ -42,14 +42,14 @@ const Voting = () => { // decaring a parent commponents
     setVotes((votes) =>
       votes.map((vote) => {
         if (vote.id ===id ) {
-            return Object.assign({}, vote, { count: vote.count + 1 , disabled:true}) // when i click to the btn the counter will increment // disabled the btn 
-            
-            
+            setDisabledButtonId(id)
+          return Object.assign({}, vote, { count: vote.count + 1 , disabled:true}) // when i click to the btn the counter will increment // disabled the btn 
+        
+
         }
         return vote
-    })
+      })
     )
-    setDisabledButtonId(id)
     setDone(true);
     setChange(true);
       localStorage.setItem("votes", JSON.stringify(votes));
@@ -62,8 +62,10 @@ const Voting = () => { // decaring a parent commponents
     setVotes((votes) =>
       votes.map((vote) => {
         if (vote.id === disabledButtonId) {
-            setDisabledButtonId(vote.id )
-            return Object.assign({}, vote, { count: vote.count -1 , disabled:true})
+          return {
+            ...vote,
+            count: vote.count - 1
+          }
         }
         return vote
       })
@@ -89,7 +91,7 @@ const Voting = () => { // decaring a parent commponents
         </div>
       )} */}
       {Done && <button onClick={handleDone} >Done </button>}
-      {Change && <button onClick={handleChangeVote} disabled={disabledButtonId !== null } >Change Vote</button>}
+      {Change && <button onClick={handleChangeVote}>Change Vote</button>}
         </div>
       ))}
     </div>
